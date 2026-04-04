@@ -1,0 +1,20 @@
+nama = str(input("Masukan nama anda: ")) 
+hargakertas = float(input("Masukan harga kertas : "))
+jumlahkertas = int(input("Masukan jumlah kertas : "))
+
+print("Nama saya : ", nama)
+print("Harga kertas : ", hargakertas)
+print("Jumlah kertas : ", jumlahkertas)
+
+totalhargaawal = hargakertas * jumlahkertas
+
+if jumlahkertas > 50 :
+    total = totalhargaawal - (totalhargaawal * 5/100)
+    print(total)
+else : 
+    print(totalhargaawal)
+
+
+
+
+

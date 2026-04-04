@@ -1,0 +1,14 @@
+""" Logika IF dasar """
+
+""" Logika IF digunakan untuk menentukan sebuah solusi
+dari permasalahan yang menghasilkan keputusan akhir """
+
+""" If akan berjalan jika salah satu kondisi bersifat true / benar """
+
+# CONTOH : Menentukan Lulus atau Tidak Lulus
+nilai = int(input("Masukan Nilai : "))
+if nilai >= 77 :
+    ket = "Lulus"
+else :
+    ket = "Tidak Lulus" 
+print("Keterangan : ", ket)     

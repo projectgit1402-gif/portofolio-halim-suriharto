@@ -1,0 +1,38 @@
+'''NESTED IF "
+# Nested IF digunakan untuk menentuan sebuah pilihan yang lebih dari 2 variabel
+
+" Contoh 1 "
+# Menentukan predikat nilai
+nilai = int(input("Masukan Nilai : "))
+if nilai >=90 :
+     Ket = "A"
+elif nilai <=75 :
+     Ket = "C"
+else: 
+     Ket = "B" 
+print(Ket)'''
+
+''' Contoh 2 '''
+#Menentukan gaji karyawan berdasarkan jabatan dan masa kerja
+jab = str(input("Masukan jabatan: "))
+mk = int(input("Masukan masa kerja: "))
+
+if jab.lower() == "karyawan":
+    if mk >= 5:
+        gaji = "5jt"
+    else : 
+        gaji = "3jt"
+elif jab.lower() == "staff":
+    if mk >= 5:
+        gaji = "7jt"
+    else :
+        gaji = "5jt"
+elif jab.lower() == "manager":
+    if mk >= 5:
+       gaji = "9jt"
+    else: 
+        gaji = "7jt"
+else:
+    gaji = "Tidak tersedia"
+print(gaji)
+

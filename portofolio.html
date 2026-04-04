@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halim Suriharto — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+html,body{margin:0;padding:0;height:100%;overflow-x:hidden;scroll-behavior:smooth}
+*{box-sizing:border-box}
+:root{--bg:#0a0a0f;--surface:rgba(255,255,255,0.04);--text:#e8e6e1;--gold:#c9a84c;--maroon:#8b2252}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif}
+h1,h2,h3,h4,h5{font-family:'Playfair Display',serif}
+.grain{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08)}
+.glass-strong{background:rgba(10,10,15,0.7);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border-bottom:1px solid rgba(255,255,255,0.06)}
+nav a{position:relative;color:rgba(255,255,255,0.6);transition:color .3s}
+nav a:hover,nav a.active{color:#c9a84c}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:#c9a84c;transition:width .3s}
+nav a:hover::after,nav a.active::after{width:100%}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes fogDrift{0%{transform:translateX(-10%)}50%{transform:translateX(10%)}100%{transform:translateX(-10%)}}
+.fog{animation:fogDrift 20s ease-in-out infinite}
+.hero-bg{background:linear-gradient(180deg,#0d1117 0%,#1a1a2e 30%,#16213e 60%,#0a0a0f 100%);position:relative;overflow:hidden}
+.mountain-layer{position:absolute;bottom:0;width:100%;opacity:.6}
+.glow-text:hover{text-shadow:0 0 30px rgba(201,168,76,0.3)}
+.glow-card:hover{box-shadow:0 0 40px rgba(201,168,76,0.08)}
+.img-hover{overflow:hidden;position:relative}
+.img-hover .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.7));opacity:0;transition:opacity .5s}
+.img-hover:hover .overlay{opacity:1}
+.img-hover img{transition:transform .8s ease;width:100%;height:100%;object-fit:cover;display:block}
+.img-hover:hover img{transform:scale(1.05)}
+.progress-fill{transition:width 1.5s ease}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent)}
+.spotlight{position:relative}
+.spotlight::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:200%;height:100%;background:radial-gradient(ellipse,rgba(201,168,76,0.04) 0%,transparent 70%);pointer-events:none}
+.ocean-grad{background:linear-gradient(180deg,#0a0a0f,#0c1929 40%,#112240 70%,#0a0a0f)}
+.timeline-line{position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,rgba(201,168,76,0.5),rgba(139,34,82,0.3))}
+.timeline-dot{width:18px;height:18px;border-radius:50%;border:2px solid #c9a84c;background:#0a0a0f;position:relative;z-index:2;flex-shrink:0}
+.badge{display:inline-block;padding:4px 14px;border:1px solid rgba(201,168,76,0.4);color:#c9a84c;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.vision-card{position:relative;overflow:hidden;border-radius:12px}
+.vision-card .vision-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,0.85));display:flex;flex-direction:column;justify-content:flex-end;padding:24px;opacity:0;transition:opacity .5s}
+.vision-card:hover .vision-overlay{opacity:1}
+.vision-card:hover .vision-bg{transform:scale(1.05)}
+.vision-bg{transition:transform .8s ease;width:100%;height:100%;object-fit:cover;display:block}
+.cert-frame{border:2px solid rgba(201,168,76,0.2);padding:8px;border-radius:8px;position:relative}
+.cert-frame::before{content:'';position:absolute;inset:4px;border:1px solid rgba(201,168,76,0.1);border-radius:6px;pointer-events:none}
+@keyframes scrollPulse{0%,100%{opacity:.4;transform:translateY(0)}50%{opacity:1;transform:translateY(8px)}}
+.scroll-indicator{animation:scrollPulse 2s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#0a0a0f}
+::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:3px}
+</style>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full" style="height:100%;overflow-y:auto;overflow-x:hidden">
+   <div class="grain"></div>
+
+   <!-- NAVBAR -->
+   <header id="navbar" class="glass-strong fixed top-0 left-0 w-full z-50 transition-all duration-500" style="padding:16px 0">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+     <a href="#home" class="text-lg font-bold tracking-wider" style="font-family:'Playfair Display',serif;color:#c9a84c">HS</a>
+     <nav class="hidden md:flex gap-8 text-sm tracking-widest uppercase" style="font-size:11px;letter-spacing:3px">
+      <a href="#home" class="active" data-nav>Home</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#grade" data-nav>Grade</a>
+      <a href="#sertifikat" data-nav>Sertifikat</a>
+      <a href="#assignment" data-nav>Assignment</a>
+      <a href="#future" data-nav>Future Plan</a>
+     </nav>
+     <button id="mobile-menu-btn" class="md:hidden" style="color:#c9a84c" aria-label="Menu">
+      <i data-lucide="menu" style="width:24px;height:24px"></i>
+     </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 pt-2">
+     <nav class="flex flex-col gap-4 text-sm tracking-widest uppercase" style="font-size:11px;letter-spacing:3px">
+      <a href="#home" data-nav>Home</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#grade" data-nav>Grade</a>
+      <a href="#sertifikat" data-nav>Sertifikat</a>
+      <a href="#assignment" data-nav>Assignment</a>
+      <a href="#future" data-nav>Future Plan</a>
+     </nav>
+    </div>
+   </header>
+
+   <!-- HERO -->
+   <section id="home" class="hero-bg w-full relative" style="min-height:100vh;display:flex;align-items:center;justify-content:center">
+    <div id="stars-container" class="absolute inset-0 overflow-hidden" aria-hidden="true"></div>
+    <svg class="mountain-layer" style="opacity:.15" viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#1a1a2e" d="M0,400 L0,280 Q200,120 400,200 Q600,80 720,180 Q900,60 1080,160 Q1200,100 1440,200 L1440,400Z"/></svg>
+    <svg class="mountain-layer" style="opacity:.25" viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#16213e" d="M0,400 L0,300 Q180,200 360,260 Q540,160 720,240 Q900,140 1100,220 Q1300,180 1440,260 L1440,400Z"/></svg>
+    <div class="fog absolute w-full" style="bottom:15%;height:120px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.03),transparent);opacity:.6"></div>
+    <div class="fog absolute w-full" style="bottom:25%;height:80px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.02),transparent);animation-delay:-8s"></div>
+    <div class="text-center relative z-10 px-6">
+     <p class="text-xs tracking-widest uppercase mb-6 reveal" style="color:rgba(201,168,76,0.6);letter-spacing:6px">Portfolio</p>
+     <h1 id="hero-title" class="text-4xl md:text-7xl lg:text-8xl font-black mb-6 reveal" style="line-height:1.05;letter-spacing:-1px">WELCOME TO<br>MY PORTFOLIO</h1>
+     <p id="hero-subtitle" class="text-sm md:text-base tracking-wider reveal" style="color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto">A journey of growth, discipline, and ambition</p>
+     <div class="mt-16 scroll-indicator reveal">
+      <i data-lucide="chevron-down" style="width:20px;height:20px;color:rgba(201,168,76,0.5);margin:0 auto;display:block"></i>
+     </div>
+    </div>
+   </section>
+
+   <!-- ABOUT -->
+   <section id="about" class="w-full relative" style="background:linear-gradient(180deg,#0a0a0f,#0d1520,#0a0a0f)">
+    <div class="section-divider w-full"></div>
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">About Me</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-16 reveal">Get to Know Me</h2>
+     <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="reveal">
+       <div class="glass rounded-2xl p-8 glow-card transition-all duration-500">
+        <h3 id="display-name" class="text-2xl font-bold mb-6" style="color:#c9a84c;font-family:'Playfair Display',serif">Halim Suriharto</h3>
+        <div class="space-y-4 text-sm" style="color:rgba(255,255,255,0.65)">
+         <div class="flex items-start gap-3"><i data-lucide="map-pin" style="width:16px;height:16px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>Batam, 01 Maret 2008</span></div>
+         <div class="flex items-start gap-3"><i data-lucide="heart" style="width:16px;height:16px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>Olahraga, Mendaki Gunung, Baca Buku, Fotografi</span></div>
+         <div class="flex items-start gap-3"><i data-lucide="home" style="width:16px;height:16px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>Taman Yasmin Sektor 7</span></div>
+        </div>
+        <div class="mt-8 pt-6" style="border-top:1px solid rgba(255,255,255,0.06)">
+         <p id="display-quote" class="italic text-lg glow-text transition-all cursor-default" style="font-family:'Playfair Display',serif;color:rgba(255,255,255,0.8)">"One day or day one"</p>
+         <div class="mt-6 flex justify-center gap-4">
+          <a href="https://instagram.com/limms.1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300" style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);color:#c9a84c" onmouseover="this.style.background='rgba(201,168,76,0.2)'" onmouseout="this.style.background='rgba(201,168,76,0.1)'">
+           <i data-lucide="instagram" style="width:20px;height:20px"></i>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- ===== FOTO PROFIL ===== ganti URL ini dengan link Google Drive foto Halim -->
+      <div class="reveal flex justify-center">
+       <div class="relative">
+        <div class="w-64 h-80 rounded-2xl overflow-hidden" style="border:1px solid rgba(201,168,76,0.15);box-shadow:0 0 60px rgba(201,168,76,0.05)">
+         <img src="assets/galery-foto/Foto%20Get%20To%20Know%20Me.jpg" alt="Halim Suriharto" style="width:100%;height:100%;object-fit:cover;transition:transform .7s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div class="absolute -inset-4 rounded-3xl" style="border:1px solid rgba(201,168,76,0.06);pointer-events:none"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- GALLERY -->
+   <section class="w-full" style="background:#0a0a0f">
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">Gallery</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-12 reveal">Captured Moments</h2>
+     <div class="grid md:grid-cols-2 gap-4 mb-4">
+      <!-- ===== GALLERY FOTO 1 ===== ganti URL dengan foto asli -->
+      <div class="img-hover rounded-xl reveal" style="aspect-ratio:16/9">
+       <img src="assets/galery-foto/Foto%20Captured%20Moments%20(Mountain%20Summit).jpg" alt="Mountain Summit" class="rounded-xl">
+       <div class="overlay rounded-xl flex items-end p-5"><span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Mountain Summit</span></div>
+      </div>
+      <!-- ===== GALLERY FOTO 2 ===== -->
+      <div class="img-hover rounded-xl reveal" style="aspect-ratio:16/9">
+       <img src="assets/galery-foto/Foto%20Capture%20Moments%2C%20Foto%202%20(Ocean%20Breeze).jpg" alt="Ocean Breeze" class="rounded-xl">
+       <div class="overlay rounded-xl flex items-end p-5"><span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Ocean Breeze</span></div>
+      </div>
+     </div>
+     <div class="max-w-lg mx-auto">
+      <!-- ===== GALLERY FOTO 3 ===== -->
+      <div class="img-hover rounded-xl reveal" style="aspect-ratio:16/9">
+       <img src="assets/galery-foto/Foto%20Captured%20Moments%20(The%20journey).jpg" alt="The Journey" class="rounded-xl">
+       <div class="overlay rounded-xl flex items-end p-5"><span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">The Journey</span></div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- RESUME -->
+   <section class="w-full ocean-grad spotlight">
+    <div class="section-divider w-full"></div>
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">Curriculum Vitae</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-12 reveal">Resume</h2>
+     <div class="glass rounded-2xl p-8 md:p-12 reveal glow-card transition-all duration-500">
+      <div class="flex flex-col md:flex-row items-center gap-6 mb-10 pb-8" style="border-bottom:1px solid rgba(201,168,76,0.15)">
+       <div class="w-20 h-20 rounded-full flex-shrink-0" style="background:linear-gradient(135deg,#c9a84c,#8b2252);display:flex;align-items:center;justify-content:center">
+        <span class="text-2xl font-bold" style="font-family:'Playfair Display',serif;color:#fff">HS</span>
+       </div>
+       <div>
+        <h3 class="text-2xl md:text-3xl font-bold" style="font-family:'Playfair Display',serif">Halim Suriharto</h3>
+        <p class="text-sm mt-1" style="color:rgba(255,255,255,0.4)">Student • Aspiring Medical Professional</p>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+       <div>
+        <h4 class="text-sm tracking-widest uppercase mb-5" style="color:#c9a84c;letter-spacing:3px">Profil Pribadi</h4>
+        <div class="space-y-3 text-sm" style="color:rgba(255,255,255,0.6)">
+         <div class="flex gap-2"><i data-lucide="user" style="width:14px;height:14px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>Halim Suriharto</span></div>
+         <div class="flex gap-2"><i data-lucide="calendar" style="width:14px;height:14px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>01 Maret 2008</span></div>
+         <div class="flex gap-2"><i data-lucide="map-pin" style="width:14px;height:14px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>Batam</span></div>
+         <div class="flex gap-2"><i data-lucide="home" style="width:14px;height:14px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>Taman Yasmin Sektor 7</span></div>
+         <div class="flex gap-2"><i data-lucide="heart" style="width:14px;height:14px;color:#c9a84c;flex-shrink:0;margin-top:2px"></i><span>Olahraga, Mendaki, Baca Buku, Fotografi</span></div>
+        </div>
+       </div>
+       <div>
+        <h4 class="text-sm tracking-widest uppercase mb-5" style="color:#c9a84c;letter-spacing:3px">Pendidikan</h4>
+        <div class="relative pl-8">
+         <div class="timeline-line"></div>
+         <div class="space-y-6">
+          <div class="flex gap-3"><div class="timeline-dot" style="margin-top:2px"></div><div><p class="text-sm font-semibold">SD Bosowa Bina Insani</p><p class="text-xs mt-1" style="color:rgba(255,255,255,0.4)">Fondasi Pendidikan</p></div></div>
+          <div class="flex gap-3"><div class="timeline-dot" style="margin-top:2px"></div><div><p class="text-sm font-semibold">SMPIT Ummul Quro</p><p class="text-xs mt-1" style="color:rgba(255,255,255,0.4)">Bogor — Kelas VII–IX</p></div></div>
+          <div class="flex gap-3"><div class="timeline-dot" style="margin-top:2px"></div><div><p class="text-sm font-semibold">MA Al-Irsyad Tengaran</p><p class="text-xs mt-1" style="color:rgba(255,255,255,0.4)">Kota Batu</p></div></div>
+          <div class="flex gap-3"><div class="timeline-dot" style="margin-top:2px"></div><div><p class="text-sm font-semibold">SMAIT Ummul Quro</p><p class="text-xs mt-1" style="color:rgba(255,255,255,0.4)">Bogor</p></div></div>
+         </div>
+        </div>
+       </div>
+       <div>
+        <h4 class="text-sm tracking-widest uppercase mb-5" style="color:#c9a84c;letter-spacing:3px">Keahlian</h4>
+        <div class="space-y-5">
+         <div>
+          <div class="flex justify-between text-sm mb-2"><span>Bahasa Arab</span><span style="color:#c9a84c;font-size:11px">Advanced</span></div>
+          <div class="w-full h-1.5 rounded-full" style="background:rgba(255,255,255,0.08)"><div class="progress-fill h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#c9a84c,#8b2252)" data-width="88%"></div></div>
+          <p class="text-xs mt-1" style="color:rgba(255,255,255,0.3)">Conversational, written &amp; advanced proficiency</p>
+         </div>
+         <div>
+          <div class="flex justify-between text-sm mb-2"><span>Social Skill</span><span style="color:#c9a84c;font-size:11px">Advanced</span></div>
+          <div class="w-full h-1.5 rounded-full" style="background:rgba(255,255,255,0.08)"><div class="progress-fill h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#c9a84c,#8b2252)" data-width="85%"></div></div>
+          <p class="text-xs mt-1" style="color:rgba(255,255,255,0.3)">Leadership &amp; team collaboration</p>
+         </div>
+         <div>
+          <div class="flex justify-between text-sm mb-2"><span>Kepemimpinan</span><span style="color:#c9a84c;font-size:11px">Advanced</span></div>
+          <div class="w-full h-1.5 rounded-full" style="background:rgba(255,255,255,0.08)"><div class="progress-fill h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#c9a84c,#8b2252)" data-width="80%"></div></div>
+          <p class="text-xs mt-1" style="color:rgba(255,255,255,0.3)">Organizing &amp; strategic thinking</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- EXPERIENCE -->
+   <section id="experience" class="w-full" style="background:linear-gradient(180deg,#0a0a0f,#0d1117,#0a0a0f)">
+    <div class="section-divider w-full"></div>
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">Experience</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-6 reveal">Leadership &amp; Growth</h2>
+     <div class="reveal mb-6"><div class="badge">Leadership &amp; Growth</div></div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="img-hover rounded-xl reveal" style="aspect-ratio:3/4;position:relative">
+       <img src="assets/galery-foto/Foto%20Ketua%20Pelaksana%20.jpg" alt="Photo 1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;transition:transform .8s">
+       <div class="overlay rounded-xl flex items-end p-4" style="position:absolute;inset:0">
+        <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Photo 1</span>
+       </div>
+      </div>
+      <div class="img-hover rounded-xl reveal" style="aspect-ratio:3/4;position:relative">
+       <img src="assets/galery-foto/Foto%20Anggota%20Seksi%20Bahasa.JPG" alt="Photo 2" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;transition:transform .8s">
+       <div class="overlay rounded-xl flex items-end p-4" style="position:absolute;inset:0">
+        <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Photo 2</span>
+       </div>
+      </div>
+      <div class="img-hover rounded-xl reveal" style="aspect-ratio:3/4;position:relative">
+       <img src="assets/galery-foto/Foto%20Anggota%20Ambalan.jpg" alt="Photo 3" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;transition:transform .8s">
+       <div class="overlay rounded-xl flex items-end p-4" style="position:absolute;inset:0">
+        <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Photo 3</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- GRADE -->
+   <section id="grade" class="w-full" style="background:#0a0a0f">
+    <div class="section-divider w-full"></div>
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">Grade</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-12 reveal">Academic Journey</h2>
+     <div class="reveal">
+      <div class="badge mb-6">Kelas XI</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+       <div class="img-hover rounded-xl" style="aspect-ratio:9/16;position:relative">
+        <img src="assets/rapot/rapot1.jpg" alt="Report Page 1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px">
+        <div class="overlay rounded-xl flex items-end p-3" style="position:absolute;inset:0"><span class="text-xs" style="color:rgba(255,255,255,0.8)">Page 1</span></div>
+       </div>
+       <div class="img-hover rounded-xl" style="aspect-ratio:9/16;position:relative">
+        <img src="assets/rapot/rapot2.jpg" alt="Report Page 2" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px">
+        <div class="overlay rounded-xl flex items-end p-3" style="position:absolute;inset:0"><span class="text-xs" style="color:rgba(255,255,255,0.8)">Page 2</span></div>
+       </div>
+       <div class="img-hover rounded-xl" style="aspect-ratio:9/16;position:relative">
+        <img src="assets/rapot/rapot3.jpg" alt="Report Page 3" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px">
+        <div class="overlay rounded-xl flex items-end p-3" style="position:absolute;inset:0"><span class="text-xs" style="color:rgba(255,255,255,0.8)">Page 3</span></div>
+       </div>
+       <div class="img-hover rounded-xl" style="aspect-ratio:9/16;position:relative">
+        <img src="assets/rapot/rapot4.jpg" alt="Report Page 4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px">
+        <div class="overlay rounded-xl flex items-end p-3" style="position:absolute;inset:0"><span class="text-xs" style="color:rgba(255,255,255,0.8)">Page 4</span></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- ASSIGNMENT -->
+   <section id="assignment" class="w-full spotlight" style="background:linear-gradient(180deg,#0a0a0f,#0d1520,#0a0a0f)">
+    <div class="section-divider w-full"></div>
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">My Works</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-12 reveal">Assignments</h2>
+
+     <!-- KTI -->
+     <div class="reveal mb-12">
+      <div class="badge mb-6">Karya Tulis Ilmiah</div>
+      <div class="glass rounded-2xl p-8 glow-card transition-all duration-500 flex flex-col md:flex-row items-center gap-6">
+       <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#8b2252)">
+        <i data-lucide="file-text" style="width:32px;height:32px;color:#fff"></i>
+       </div>
+       <div class="flex-1 text-center md:text-left">
+        <h4 class="text-xl font-bold mb-1" style="font-family:'Playfair Display',serif">Karya Tulis Ilmiah</h4>
+        <p class="text-sm" style="color:rgba(255,255,255,0.6)">Proposal Penelitian - Scientific Research Paper</p>
+       </div>
+       <a href="assets/tugas%20tik/Karya%20Ilmiah%20Halim%2C%20Athar%2C%20Dito.pdf" target="_blank" class="inline-block px-6 py-2 text-sm tracking-wider uppercase rounded-lg transition-all duration-300 flex-shrink-0" style="background:linear-gradient(90deg,#c9a84c,#8b2252);color:#fff">
+        <i data-lucide="external-link" style="width:16px;height:16px;display:inline;margin-right:6px"></i>View KTI
+       </a>
+      </div>
+     </div>
+
+     <!-- Praktek Informatika -->
+     <div class="reveal">
+      <div class="badge mb-6">Praktek Informatika</div>
+      <div class="grid md:grid-cols-3 gap-6">
+       <div class="img-hover rounded-xl reveal" style="position:relative">
+        <img src="assets/tugas%20tik/Tugas%20TIK.png" alt="Assignment 1" style="width:100%;border-radius:12px;display:block">
+        <div class="overlay rounded-xl flex items-end p-4" style="position:absolute;inset:0">
+         <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Assignment 1</span>
+        </div>
+       </div>
+       <div class="img-hover rounded-xl reveal" style="position:relative">
+        <img src="assets/tugas%20tik/Tugas%20TIK1.png" alt="Assignment 2" style="width:100%;border-radius:12px;display:block;object-position:left center;transform:scale(0.88) translateX(-7%);transform-origin:left center">
+        <div class="overlay rounded-xl flex items-end p-4" style="position:absolute;inset:0">
+         <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Assignment 2</span>
+        </div>
+       </div>
+       <div class="img-hover rounded-xl reveal" style="position:relative">
+        <img src="assets/tugas%20tik/Tugas%20TIK2.png" alt="Assignment 3" style="width:100%;border-radius:12px;display:block">
+        <div class="overlay rounded-xl flex items-end p-4" style="position:absolute;inset:0">
+         <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Assignment 3</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- SERTIFIKAT -->
+   <section id="sertifikat" class="w-full" style="background:linear-gradient(180deg,#0a0a0f,#0c1929 30%,#112240 60%,#16213e 80%,#1a2a4a)">
+    <div class="section-divider w-full"></div>
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">Sertifikat</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-12 reveal">Achievements</h2>
+     <div class="grid md:grid-cols-2 gap-8">
+      <!-- ===== SERTIFIKAT 1 ===== ganti dengan foto sertifikat asli dari Google Drive -->
+      <div class="reveal">
+       <div class="cert-frame">
+        <div class="rounded-lg overflow-hidden" style="aspect-ratio:16/9">
+         <img src="assets/Sertifikat/sertifikat1.jpeg" alt="Sertifikat Hafalan" style="width:100%;height:100%;object-fit:cover">
+        </div>
+       </div>
+       <div class="mt-4 text-center">
+        <h4 class="font-semibold" style="font-family:'Playfair Display',serif">Hafalan Al-Quran 16 Juz</h4>
+        <p class="text-xs mt-1" style="color:rgba(255,255,255,0.4)">Tahfidz Achievement</p>
+       </div>
+      </div>
+      <!-- ===== SERTIFIKAT 2 ===== -->
+      <div class="reveal">
+       <div class="cert-frame">
+        <div class="rounded-lg overflow-hidden" style="aspect-ratio:16/9">
+         <img src="assets/Sertifikat/sertifikat2.jpg" alt="Sertifikat Olimpiade" style="width:100%;height:100%;object-fit:cover">
+        </div>
+       </div>
+       <div class="mt-4 text-center">
+        <h4 class="font-semibold" style="font-family:'Playfair Display',serif">Peserta Olimpiade Bahasa Arab</h4>
+        <p class="text-xs mt-1" style="color:rgba(255,255,255,0.4)">Arabic Language Olympiad</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- FUTURE PLAN -->
+   <section id="future" class="w-full" style="background:linear-gradient(180deg,#0a0a0f,#0c1929 30%,#112240 60%,#16213e 80%,#1a2a4a)">
+    <div class="section-divider w-full"></div>
+    <div class="max-w-5xl mx-auto px-6 py-24">
+     <p class="text-xs tracking-widest uppercase mb-3 reveal" style="color:#c9a84c;letter-spacing:5px">Future Plan</p>
+     <h2 class="text-3xl md:text-5xl font-bold mb-4 reveal">Vision &amp; Dreams</h2>
+     <p class="text-sm mb-6 reveal" style="color:rgba(255,255,255,0.4)">From the mountains to the sky — the journey continues</p>
+     <div class="reveal mb-6"><div class="badge">Vision &amp; Dreams</div></div>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="vision-card reveal" style="aspect-ratio:9/16">
+       <img src="assets/galery-foto/Foto%20Universitas%20Padjajaran.jpg" alt="Photo 1" class="vision-bg rounded-xl">
+       <div class="vision-overlay rounded-xl">
+        <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Photo 1</span>
+       </div>
+      </div>
+      <div class="vision-card reveal" style="aspect-ratio:9/16">
+       <img src="assets/galery-foto/Foto%20Pernikahan.jpg" alt="Photo 2" class="vision-bg rounded-xl">
+       <div class="vision-overlay rounded-xl">
+        <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Photo 2</span>
+       </div>
+      </div>
+      <div class="vision-card reveal" style="aspect-ratio:9/16">
+       <img src="assets/galery-foto/Foto%20Traveling.jpg" alt="Photo 3" class="vision-bg rounded-xl">
+       <div class="vision-overlay rounded-xl">
+        <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Photo 3</span>
+       </div>
+      </div>
+      <div class="vision-card reveal" style="aspect-ratio:9/16">
+       <img src="assets/galery-foto/Foto%20Medical%20Specialist.jpg" alt="Photo 4" class="vision-bg rounded-xl">
+       <div class="vision-overlay rounded-xl">
+        <span class="text-xs tracking-wider" style="color:rgba(255,255,255,0.8)">Photo 4</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- FOOTER -->
+   <footer class="w-full py-12 text-center" style="background:#060609;border-top:1px solid rgba(255,255,255,0.04)">
+    <p class="text-xs tracking-widest" style="color:rgba(255,255,255,0.2);letter-spacing:4px">HALIM SURIHARTO © 2025</p>
+    <p class="text-xs mt-2" style="color:rgba(255,255,255,0.1)">Journey of Growth</p>
+   </footer>
+  </div>
+
+  <script>
+const defaultConfig = {
+  hero_title: 'WELCOME TO MY PORTFOLIO',
+  hero_subtitle: 'A journey of growth, discipline, and ambition',
+  about_quote: 'One day or day one',
+  person_name: 'Halim Suriharto'
+};
+function applyConfig(cfg) {
+  const el = (id) => document.getElementById(id);
+  if (el('hero-title')) el('hero-title').innerHTML = (cfg.hero_title || defaultConfig.hero_title).replace('MY PORTFOLIO', 'MY<br>PORTFOLIO');
+  if (el('hero-subtitle')) el('hero-subtitle').textContent = cfg.hero_subtitle || defaultConfig.hero_subtitle;
+  if (el('display-quote')) el('display-quote').textContent = `"${cfg.about_quote || defaultConfig.about_quote}"`;
+  if (el('display-name')) el('display-name').textContent = cfg.person_name || defaultConfig.person_name;
+}
+applyConfig(defaultConfig);
+
+// Stars
+const sc = document.getElementById('stars-container');
+for (let i = 0; i < 60; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  s.style.left = Math.random()*100+'%';
+  s.style.top = Math.random()*70+'%';
+  s.style.animation = `twinkle ${3+Math.random()*4}s ease-in-out infinite`;
+  s.style.animationDelay = Math.random()*4+'s';
+  sc.appendChild(s);
+}
+
+const wrapper = document.getElementById('app-wrapper');
+
+// Scroll Reveal
+function revealOnScroll() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.88) el.classList.add('visible');
+  });
+}
+wrapper.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', () => { setTimeout(revealOnScroll, 100); setTimeout(revealOnScroll, 500); });
+
+// Progress Bars
+function animateProgressBars() {
+  document.querySelectorAll('.progress-fill').forEach(bar => {
+    if (bar.getBoundingClientRect().top < window.innerHeight && bar.style.width === '0%') {
+      bar.style.width = bar.dataset.width;
+    }
+  });
+}
+wrapper.addEventListener('scroll', animateProgressBars);
+
+// Navbar active
+function updateNav() {
+  const sections = ['home','about','experience','grade','sertifikat','assignment','future'];
+  let current = 'home';
+  sections.forEach(id => {
+    const s = document.getElementById(id);
+    if (s && s.getBoundingClientRect().top <= 150) current = id;
+  });
+  document.querySelectorAll('[data-nav]').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+  });
+}
+wrapper.addEventListener('scroll', updateNav);
+wrapper.addEventListener('scroll', () => {
+  document.getElementById('navbar').style.padding = wrapper.scrollTop > 80 ? '8px 0' : '16px 0';
+});
+
+// Mobile menu
+document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+document.querySelectorAll('#mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+lucide.createIcons();
+  </script>
+ </body>
+</html>
